@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta property="og:title" content="Pistola a alta presi&oacute;n | Talleria Pro">
   <meta property="og:description" content="Lavadora port&aacute;til inal&aacute;mbrica 100W, 50 BAR de presi&oacute;n, 80 min de autonom&iacute;a. Para coche, jard&iacute;n y barco.">
-  <meta property="og:image" content="https://orofino50.github.io/talleria/images/pistola-kit-completo.jpg">
+  <meta property="og:image" content="https://orofino50.github.io/talleria/images/pistola-clean-9.jpg">
   <meta property="og:url" content="https://orofino50.github.io/talleria/producto-pistola.html">
   <meta property="og:type" content="product">
   <meta property="og:locale" content="es_ES">
@@ -35,16 +35,275 @@
       "availability": "https://schema.org/InStock",
       "url": "https://orofino50.github.io/talleria/producto-pistola.html"
     },
-    "image": "https://orofino50.github.io/talleria/images/pistola-kit-completo.jpg"
+    "image": "https://orofino50.github.io/talleria/images/pistola-clean-9.jpg"
   }
   </script>
   <link rel="alternate" hreflang="es" href="https://orofino50.github.io/talleria/producto-pistola.html">
   <link rel="alternate" hreflang="x-default" href="https://orofino50.github.io/talleria/producto-pistola.html">
+  <style>
+    /* PURE APPLE — every photo has white/transparent background */
+    .pistol-stage {
+      background: #fff;
+      padding: 80px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      position: relative;
+    }
+    .pistol-stage img {
+      max-width: 100%;
+      max-height: 480px;
+      object-fit: contain;
+      display: block;
+    }
+    .pistol-stage__caption {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-secondary, #6e6e73);
+      font-size: 0.8125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* Bento of variants — 3 distinct angles, all white bg */
+    .variants-trio {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .variants-trio__item {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .variants-trio__item:hover { transform: translateY(-4px); }
+    .variants-trio__item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .variants-trio__item--wide { aspect-ratio: 4/3; }
+    @media (max-width: 900px) {
+      .variants-trio { grid-template-columns: 1fr; }
+      .variants-trio__item--wide { aspect-ratio: 1/1; }
+    }
+
+    /* Specs in clean cards */
+    .specs-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    .specs-row__item {
+      padding: 40px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(0,0,0,0.06);
+    }
+    .specs-row__item:last-child { border-right: none; }
+    .specs-row__value {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      color: var(--text-primary, #1d1d1f);
+      letter-spacing: -0.025em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .specs-row__label {
+      font-size: 0.75rem;
+      color: var(--text-secondary, #6e6e73);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 8px;
+    }
+    @media (max-width: 700px) {
+      .specs-row { grid-template-columns: repeat(2, 1fr); }
+      .specs-row__item:nth-child(2) { border-right: none; }
+    }
+
+    /* Big cinematic reveal (Apple Vision Pro style) */
+    .reveal {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .reveal__eyebrow {
+      font-size: 0.75rem;
+      color: var(--accent, #C5A55A);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .reveal__headline {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--text-primary, #1d1d1f);
+      margin-bottom: 24px;
+      text-wrap: balance;
+    }
+    .reveal__headline em {
+      font-style: italic;
+      font-weight: 800;
+      color: var(--accent, #C5A55A);
+    }
+    .reveal__sub {
+      font-size: 1.125rem;
+      color: var(--text-secondary, #6e6e73);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .reveal__product {
+      max-width: 100%;
+      max-height: 480px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Autoplay video feature */
+    .autoplay-video {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #000;
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+    }
+    .autoplay-video__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .autoplay-video__overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(32px, 5vw, 64px);
+      background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7));
+      pointer-events: none;
+    }
+    .autoplay-video__caption {
+      color: #fff;
+      max-width: 560px;
+    }
+    .autoplay-video__eyebrow {
+      font-size: 0.75rem;
+      color: var(--accent, #C5A55A);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .autoplay-video__title {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .autoplay-video__sub {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.85);
+    }
+    .autoplay-video__badge {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+    .autoplay-video__badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #ef4444;
+      border-radius: 50%;
+      animation: pulse-rec 2s ease-in-out infinite;
+    }
+    @keyframes pulse-rec {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    /* Detail wide with floating product */
+    .detail-floating {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      padding: 64px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .detail-floating__text h3 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--text-primary, #1d1d1f);
+      margin-bottom: 16px;
+    }
+    .detail-floating__text p {
+      font-size: 1.0625rem;
+      color: var(--text-secondary, #6e6e73);
+      line-height: 1.6;
+    }
+    .detail-floating__product {
+      max-width: 100%;
+      max-height: 360px;
+      object-fit: contain;
+    }
+    @media (max-width: 900px) {
+      .detail-floating { grid-template-columns: 1fr; padding: 40px 24px; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
 
-  <!-- NAV -->
   <nav class="product-nav product-nav--inverse" aria-label="Producto">
     <div class="product-nav__inner">
       <a href="index.html" class="product-nav__name" aria-label="Talleria Pro, Inicio">
@@ -78,128 +337,189 @@
 
   <main id="main">
 
-    <!-- HERO -->
-    <section class="hero--apple hero--apple--centered" id="hero">
-      <div class="hero--apple__content">
-        <div class="hero--apple__text">
-          <div class="hero--apple__badge">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2zM19 14l.7 2.3L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7L19 14zM5 17l.5 1.5L7 19l-1.5.5L5 21l-.5-1.5L3 19l1.5-.5L5 17z"/></svg>
+    <!-- 01. HERO — Clean white background, product floating, Apple-style -->
+    <section style="background: #fff; padding: 0;" id="hero">
+      <div class="hero--apple__content" style="display: grid; grid-template-columns: 1fr 1.1fr; min-height: 88vh; align-items: center; max-width: 1400px; margin: 0 auto; padding: 80px 40px; gap: 40px;">
+        <div class="hero--apple__text" style="padding: 0;">
+          <p class="hero--apple__badge">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/></svg>
             Nuevo
-          </div>
-          <h1 class="hero--apple__headline">Pistola a alta<br>presi&oacute;n.</h1>
-          <p class="hero--apple__subheadline">Lavadora port&aacute;til inal&aacute;mbrica 100W, 50 BAR de presi&oacute;n y 80 minutos de autonom&iacute;a. Limpia coche, jard&iacute;n y barco sin cables.</p>
-          <div class="hero--apple__actions">
-            <a href="#cta-final" class="btn btn--accent">Comprar &mdash; €64,90</a>
-            <a href="#diseno" class="btn btn--outline-light">Ver en detalle</a>
+          </p>
+          <h1 class="hero--apple__headline" style="color: #1d1d1f;">Pistola a alta<br>presi&oacute;n.</h1>
+          <p class="hero--apple__subheadline" style="color: #6e6e73;">100W inal&aacute;mbrica. 50 BAR de presi&oacute;n. 80 minutos de autonom&iacute;a. Limpia coche, jard&iacute;n y barco sin cables.</p>
+          <div class="hero--apple__actions" style="margin-top: 32px;">
+            <a href="#cta-final" class="btn btn--accent" style="background: #1d1d1f; color: #fff;">Comprar &mdash; €64,90</a>
+            <a href="#diseno" class="btn btn--outline-dark" style="color: #1d1d1f; border-color: #1d1d1f;">Ver en detalle</a>
           </div>
         </div>
-        <div class="hero--apple__visual" id="hero-video-wrap">
-          <img src="images/pistola-kit-completo.jpg" alt="Pistola a alta presi&oacute;n inal&aacute;mbrica con kit completo" class="hero--apple__video" width="1200" height="900" style="object-fit: contain; background: #fff; border-radius: 18px;">
+        <div class="hero--apple__visual" style="padding: 0; background: transparent;">
+          <img src="images/pistola-clean-9.jpg" alt="Pistola a alta presi&oacute;n" style="width: 100%; max-width: 600px; max-height: 540px; object-fit: contain; display: block; margin: 0 auto; filter: drop-shadow(0 30px 60px rgba(0,0,0,0.15));">
         </div>
       </div>
     </section>
 
-    <!-- FEATURES — Dark bento -->
-    <section class="bento-grid" id="diseno">
-      <article class="bento-card bento-card--large animate-in">
-        <img src="images/pistola-maleta-abierta.png" alt="Pistola de presi&oacute;n con maleta abierta y accesorios" class="bento-card__image" loading="lazy" decoding="async">
-        <div class="bento-card__overlay"></div>
-        <div class="bento-card__content">
-          <p class="bento-card__label">Tecnolog&iacute;a</p>
-          <h3 class="bento-card__title">Presi&oacute;n potente. Resultado impecable.</h3>
-          <p class="bento-card__text">Bomba de &eacute;mbolo de 18mm con bomba de pist&oacute;n 18D. Hasta 50 BAR de presi&oacute;n con un alcance de 10 metros.</p>
-        </div>
-      </article>
-      <article class="bento-card animate-in">
-        <img src="images/pistola-maleta-fechada.png" alt="Maleta de transporte r&iacute;gida" class="bento-card__image" loading="lazy" decoding="async">
-        <div class="bento-card__overlay"></div>
-        <div class="bento-card__content">
-          <p class="bento-card__label">Portabilidad</p>
-          <h3 class="bento-card__title">Kit completo en maleta.</h3>
-          <p class="bento-card__text">Todo lo que necesitas en una maleta r&iacute;gida. Lista para llevar y guardar.</p>
-        </div>
-      </article>
-      <article class="bento-card animate-in">
-        <img src="images/pistola-kit-completo.jpg" alt="Detalle de la pistola y boquillas" class="bento-card__image" loading="lazy" decoding="async">
-        <div class="bento-card__overlay"></div>
-        <div class="bento-card__content">
-          <p class="bento-card__label">Versatilidad</p>
-          <h3 class="bento-card__title">Boquillas para cada uso.</h3>
-          <p class="bento-card__text">M&uacute;ltiples patrones de agua ajustables. De chorro concentrado a lluvia suave.</p>
-        </div>
-      </article>
-    </section>
-
-    <!-- ESPECIFICACIONES — Stats strip -->
-    <section class="stats-hero" style="background: var(--bg-dark);">
-      <div class="stats-hero__grid">
-        <div class="stats-hero__item animate-in">
-          <span class="stats-hero__value">100W</span>
-          <span class="stats-hero__label">Potencia</span>
-        </div>
-        <div class="stats-hero__item animate-in">
-          <span class="stats-hero__value">50 BAR</span>
-          <span class="stats-hero__label">Presi&oacute;n</span>
-        </div>
-        <div class="stats-hero__item animate-in">
-          <span class="stats-hero__value">80 min</span>
-          <span class="stats-hero__label">Autonom&iacute;a</span>
-        </div>
-        <div class="stats-hero__item animate-in">
-          <span class="stats-hero__value">10m</span>
-          <span class="stats-hero__label">Alcance</span>
-        </div>
+    <!-- 02. AUTOPLAY VIDEO 1 — pistol in hand, autoplay+loop+muted -->
+    <section style="background: #fff; padding: clamp(40px, 6vw, 80px) 24px;">
+      <div style="max-width: var(--max-width); margin: 0 auto 32px; text-align: center;">
+        <p class="product-feature__label">En acci&oacute;n &middot; 01 / 02</p>
+        <h2 style="font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; color: var(--text-primary);">As&iacute; funciona.</h2>
       </div>
-    </section>
-
-    <!-- QU&Eacute; INCLUYE LA CAJA -->
-    <section class="apple-box">
-      <div class="apple-box__inner">
-        <h2 class="apple-box__headline animate-in">Qu&eacute; incluye la caja.</h2>
-        <div class="apple-box__grid animate-in">
-          <div class="apple-box__item">
-            <img src="images/pistola-kit-completo.jpg" alt="Pistola de agua" class="apple-box__image" loading="lazy" decoding="async">
-            <p class="apple-box__label-text">Pistola de alta presi&oacute;n</p>
-          </div>
-          <div class="apple-box__item">
-            <img src="images/pistola-kit-completo.jpg" alt="Bater&iacute;a" class="apple-box__image" loading="lazy" decoding="async">
-            <p class="apple-box__label-text">Bater&iacute;a de litio</p>
-          </div>
-          <div class="apple-box__item">
-            <img src="images/pistola-kit-completo.jpg" alt="Cargador" class="apple-box__image" loading="lazy" decoding="async">
-            <p class="apple-box__label-text">Cargador + conector</p>
-          </div>
-          <div class="apple-box__item">
-            <img src="images/pistola-kit-completo.jpg" alt="Boquillas" class="apple-box__image" loading="lazy" decoding="async">
-            <p class="apple-box__label-text">2 boquillas + manguera 5m</p>
+      <div class="autoplay-video">
+        <video
+          class="autoplay-video__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="images/pistola-demo-1-poster.jpg"
+          width="1280"
+          height="720"
+          aria-label="Pistola a alta presi&oacute;n en acci&oacute;n: pistolando la esponja con espuma activa"
+        >
+          <source src="images/pistola-demo-1.webm" type="video/webm">
+          <source src="images/pistola-demo-1.mp4" type="video/mp4">
+        </video>
+        <div class="autoplay-video__badge">En vivo</div>
+        <div class="autoplay-video__overlay">
+          <div class="autoplay-video__caption">
+            <p class="autoplay-video__eyebrow">Video real &middot; Sin edici&oacute;n</p>
+            <h3 class="autoplay-video__title">Espuma activa en 5 segundos.</h3>
+            <p class="autoplay-video__sub">Bomba de pist&oacute;n 18D, 50 BAR continuos.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CROSS-LINK A PAINTPRO -->
-    <section class="product-feature" style="background: var(--bg-light);">
-      <div class="product-feature__inner" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center;">
-        <div class="product-feature__text" style="max-width: 460px;">
+    <!-- 02b. AUTOPLAY VIDEO 2 — snow foam on real car, autoplay+loop+muted -->
+    <section style="background: #fafafa; padding: clamp(40px, 6vw, 80px) 24px;">
+      <div style="max-width: var(--max-width); margin: 0 auto 32px; text-align: center;">
+        <p class="product-feature__label">En acci&oacute;n &middot; 02 / 02</p>
+        <h2 style="font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; color: var(--text-primary);">As&iacute; queda.</h2>
+      </div>
+      <div class="autoplay-video">
+        <video
+          class="autoplay-video__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="images/pistola-demo-2-poster.jpg"
+          width="1280"
+          height="720"
+          aria-label="Snow foam aplicado en coche real con la pistola a alta presi&oacute;n"
+        >
+          <source src="images/pistola-demo-2.webm" type="video/webm">
+          <source src="images/pistola-demo-2.mp4" type="video/mp4">
+        </video>
+        <div class="autoplay-video__badge">En vivo</div>
+        <div class="autoplay-video__overlay">
+          <div class="autoplay-video__caption">
+            <p class="autoplay-video__eyebrow">Resultado real &middot; Sin retoques</p>
+            <h3 class="autoplay-video__title">Snow foam sobre coche real.</h3>
+            <p class="autoplay-video__sub">80 min de autonom&iacute;a, sin tocar el coche.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. BIG REVEAL — Apple Vision Pro style, single product on white -->
+    <section style="background: #fafafa; padding: clamp(60px, 8vw, 120px) 24px;">
+      <div class="reveal">
+        <p class="reveal__eyebrow">Dise&ntilde;ado para limpiar</p>
+        <h2 class="reveal__headline">Sin cables.<br>Sin compresor.<br><em>Sin l&iacute;mites.</em></h2>
+        <p class="reveal__sub">Bater&iacute;a de litio 21V. Bomba de pist&oacute;n 18D. Hasta 50 BAR de presi&oacute;n. Todo cabe numa maleta compacta.</p>
+        <img class="reveal__product" src="images/pistola-clean-10.jpg" alt="Pistola a alta presi&oacute;n, vista lateral">
+      </div>
+    </section>
+
+    <!-- 03. STATS — clean cards, all spec values -->
+    <section style="background: #fff; padding: clamp(40px, 6vw, 80px) 24px;">
+      <div class="specs-row">
+        <div class="specs-row__item">
+          <div class="specs-row__value">100W</div>
+          <div class="specs-row__label">Potencia</div>
+        </div>
+        <div class="specs-row__item">
+          <div class="specs-row__value">50</div>
+          <div class="specs-row__label">BAR de presi&oacute;n</div>
+        </div>
+        <div class="specs-row__item">
+          <div class="specs-row__value">80</div>
+          <div class="specs-row__label">Minutos de uso</div>
+        </div>
+        <div class="specs-row__item">
+          <div class="specs-row__value">10m</div>
+          <div class="specs-row__label">Alcance</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. 3-UP TRIO — 3 distinct products on white -->
+    <section style="background: #fafafa; padding: clamp(60px, 8vw, 120px) 24px;">
+      <div style="max-width: var(--max-width); margin: 0 auto 48px; text-align: center;">
+        <p class="product-feature__label">Un producto, tres perspectivas</p>
+        <h2 style="font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; color: var(--text-primary);">La misma pistola.</h2>
+      </div>
+      <div class="variants-trio">
+        <div class="variants-trio__item variants-trio__item--wide">
+          <img src="images/pistola-clean-7.jpg" alt="Kit completo Pistola de presi&oacute;n con maleta y accesorios">
+        </div>
+        <div class="variants-trio__item">
+          <img src="images/pistola-walmart-2-dimensoes.jpg" alt="Dimensiones 415x230x62mm">
+        </div>
+        <div class="variants-trio__item">
+          <img src="images/pistola-walmart-1-kit.jpg" alt="Kit esencial">
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. DETAIL FLOATING — large product, text alongside -->
+    <section id="diseno" style="background: #fff; padding: clamp(60px, 8vw, 120px) 24px;">
+      <div class="detail-floating">
+        <div class="detail-floating__text">
+          <p class="product-feature__label">Ingenier&iacute;a</p>
+          <h3>Bomba de pist&oacute;n 18D. <br>Hasta 50 BAR continuos.</h3>
+          <p>La misma tecnolog&iacute;a que las hidrolimpiadoras profesionales, miniaturizada para caber en la mano. Autocebante: funciona con balde, botella o dep&oacute;sito.</p>
+        </div>
+        <img class="detail-floating__product" src="images/pistola-clean-8.jpg" alt="Detalle t&eacute;cnico de la pistola con todos los accesorios">
+      </div>
+    </section>
+
+    <!-- 06. KIT DETAIL — kit completo com maleta -->
+    <section style="background: #fafafa; padding: clamp(60px, 8vw, 120px) 24px;">
+      <div class="reveal">
+        <p class="reveal__eyebrow">Qu&eacute; viene en la caja</p>
+        <h2 class="reveal__headline">Todo lo que necesitas. <br><em>En una maleta.</em></h2>
+        <p class="reveal__sub">1 pistola &middot; 1 bater&iacute;a 21V &middot; 1 cargador &middot; 1 manguera 5m &middot; 1 conector r&aacute;pido &middot; 1 frasco de espuma &middot; 2 boquillas &middot; 1 maleta de transporte.</p>
+        <img class="reveal__product" src="images/pistola-walmart-8-kit-numerado.jpg" alt="Kit completo numerado">
+      </div>
+    </section>
+
+    <!-- 07. CROSS-LINK A PAINTPRO -->
+    <section class="product-feature" style="background: #fff;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center; padding: 80px 24px;">
+        <div style="max-width: 460px;">
           <p class="product-feature__label">Tambi&eacute;n te puede interesar</p>
           <h2 class="product-feature__headline">PaintPro&trade;.<br>La pistola para pintar.</h2>
           <p class="product-feature__sub">400W de potencia, 60 minutos de autonom&iacute;a, acabado profesional en una sola capa. La primera herramienta de Talleria Pro.</p>
           <a href="producto.html" class="btn btn--outline-dark">Conocer PaintPro&trade; &mdash; €69,90</a>
         </div>
-        <div class="product-feature__image-wrap" style="background: #fff; border-radius: 24px; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.15);">
-          <img src="images/foto-hero.webp" alt="PaintPro" class="product-feature__image" style="width: 90%; height: 90%; object-fit: contain; filter: drop-shadow(0 24px 48px rgba(0,0,0,0.18));" loading="lazy" decoding="async">
+        <div style="background: #fafafa; border-radius: 24px; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;">
+          <img src="images/foto-hero.webp" alt="PaintPro" style="width: 100%; height: 100%; object-fit: contain; padding: 40px;" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
+    <!-- 08. CTA FINAL — Apple Mac Mini style -->
     <section class="apple-cta" id="cta-final">
       <div class="apple-cta__visual animate-in">
-        <img src="images/pistola-kit-completo.jpg" alt="Pistola a alta presi&oacute;n Talleria Pro" class="apple-cta__product" width="800" height="800" loading="lazy" decoding="async" style="background: #fff; border-radius: 18px; padding: 24px;">
+        <img src="images/pistola-clean-9.jpg" alt="Pistola a alta presi&oacute;n Talleria Pro" class="apple-cta__product" width="800" height="800" loading="lazy" decoding="async">
       </div>
       <p class="apple-cta__eyebrow animate-in">Oferta de lanzamiento</p>
-      <h2 class="apple-cta__title animate-in">Tu coche, jard&iacute;n o barco<br>como nuevo.</h2>
-      <p class="apple-cta__subtitle animate-in">&Uacute;nete a los primeros en limpiar sin cables con la pistola a alta presi&oacute;n de Talleria Pro.</p>
+      <h2 class="apple-cta__title animate-in">Limpia sin cables.<br>Desde hoy.</h2>
+      <p class="apple-cta__subtitle animate-in">&Uacute;nete a los primeros en probar la pistola a alta presi&oacute;n inal&aacute;mbrica de Talleria Pro.</p>
       <div class="apple-cta__price animate-in">
         <span class="apple-cta__price-current">&euro;64,90</span>
         <span class="apple-cta__price-original">&euro;94,90</span>
@@ -225,7 +545,6 @@
     </section>
   </main>
 
-  <!-- CTA STICKY MOBILE -->
   <div class="cta-sticky" id="cta-sticky">
     <div class="cta-sticky__inner">
       <div class="cta-sticky__info">
@@ -236,7 +555,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="footer__inner">
       <div class="footer__column">
@@ -244,6 +562,10 @@
         <ul class="footer__column-list">
           <li><a href="producto.html" class="footer__column-link">PaintPro&trade;</a></li>
           <li><a href="producto-pistola.html" class="footer__column-link">Pistola a alta presi&oacute;n</a></li>
+          <li><a href="producto-secador.html" class="footer__column-link">Cepillo Secador 5en1</a></li>
+          <li><a href="producto-secador-ionico.html" class="footer__column-link">Secador I&oacute;nico</a></li>
+          <li><a href="producto-sofa-cama.html" class="footer__column-link">Sof&aacute;-cama hinchable</a></li>
+          <li><a href="producto-soprador.html" class="footer__column-link">Soprador de aire</a></li>
         </ul>
       </div>
       <div class="footer__column">
@@ -268,10 +590,7 @@
   <script defer src="js/scripts.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-
       var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // Scroll progress bar
       var progressBar = document.createElement('div');
       progressBar.className = 'scroll-progress';
       document.body.appendChild(progressBar);
@@ -281,25 +600,19 @@
         progressBar.style.width = progress + '%';
       }, { passive: true });
 
-      // Unified observer
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
       document.querySelectorAll('.animate-in').forEach(function(el) { observer.observe(el); });
 
-      // Nav scroll
       var nav = document.querySelector('.product-nav');
       window.addEventListener('scroll', function() {
         if (window.scrollY > 50) nav.classList.add('product-nav--scrolled');
         else nav.classList.remove('product-nav--scrolled');
       }, { passive: true });
 
-      // Hamburger
       var hamburger = document.querySelector('.product-nav__hamburger');
       var mobileMenu = document.querySelector('.product-nav__mobile');
       if (hamburger && mobileMenu) {
@@ -323,7 +636,6 @@
         });
       }
 
-      // CTA sticky mobile
       var ctaSticky = document.getElementById('cta-sticky');
       var ctaStickyHero = document.getElementById('hero');
       if (ctaSticky && ctaStickyHero) {
@@ -340,7 +652,6 @@
         if (footerEl) ctaStickyObserver.observe(footerEl);
       }
 
-      // Countdown
       var countdownEl = document.getElementById('countdown-time');
       if (countdownEl) {
         var endTime = new Date();
@@ -358,7 +669,6 @@
         updateCountdown();
       }
 
-      // Smooth scroll
       document.querySelectorAll('a[href^="#"]').forEach(function(link) {
         link.addEventListener('click', function(e) {
           var target = document.querySelector(link.getAttribute('href'));
