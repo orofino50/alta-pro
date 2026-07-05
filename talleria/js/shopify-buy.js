@@ -1,12 +1,12 @@
 // Shopify Buy Button — Pistola a alta presion
-// EasySell intercepta este checkout e abre o form COD automaticamente.
+// SDK oficial Shopify. Abre checkout transparente (COD nativo ativo na loja).
 (function () {
   var SCRIPT_URL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
   var CONFIG = {
     domain: 'yq8tqj-mw.myshopify.com',
     storefrontAccessToken: 'bbfbe489708458d11b582f72e0b78a5f',
     productId: '7985212129323',
-    nodeId: 'product-component-1783202400178'
+    nodeId: 'product-component-1783214728378'
   };
 
   function loadScript(cb) {
@@ -33,32 +33,29 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    // Cria o node alvo (escondido) onde o Buy Button sera montado
+    // Cria node alvo escondido para o Buy Button SDK montar
     if (!document.getElementById(CONFIG.nodeId)) {
       var hidden = document.createElement('div');
       hidden.id = CONFIG.nodeId;
-      hidden.style.position = 'absolute';
-      hidden.style.left = '-9999px';
-      hidden.style.top = '0';
-      hidden.style.width = '1px';
-      hidden.style.height = '1px';
+      hidden.style.cssText = 'position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;';
       hidden.setAttribute('aria-hidden', 'true');
       document.body.appendChild(hidden);
     }
 
-    var node = document.getElementById(CONFIG.nodeId);
-
     function openCheckout() {
-      if (!window.__shopifyUIReady) return;
+      if (!window.__shopifyUIReady) {
+        alert('Carregando checkout... Tente novamente em instantes.');
+        return;
+      }
       window.__shopifyUIReady.then(function (ui) {
         ui.openCheckout(CONFIG.productId);
       });
     }
 
-    // Expor funcao global para os botoes do site
+    // Expor funcao global
     window.shopifyCheckoutPistola = openCheckout;
 
-    // Auto-bind em qualquer link com data-shopify="pistola"
+    // Auto-bind em qualquer link/botao com data-shopify="pistola"
     document.querySelectorAll('[data-shopify="pistola"]').forEach(function (el) {
       el.addEventListener('click', function (e) {
         e.preventDefault();
@@ -67,5 +64,3 @@
     });
   });
 })();
-</content>
-</invoke>
