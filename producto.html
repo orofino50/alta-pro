@@ -491,7 +491,7 @@
     <section class="judge-me-reviews" id="judge-me-reviews">
       <div class="judge-me-reviews__inner">
         <h2 class="judge-me-reviews__headline animate-in">Opiniones de nuestros clientes</h2>
-        <div class="jdgm-widget animate-in" data-product-title="PaintPro" data-id="paintpro"></div>
+        <div class="jdgm-widget animate-in" data-id="paintpro" data-product-title="PaintPro" data-average-score="4.8" data-number-of-reviews="67"></div>
       </div>
     </section>
 
@@ -557,22 +557,28 @@
 
   <script defer src="js/scripts.js"></script>
   <script>
-    window.jdgmSettings = {
-      shopDomain: 'lapurasalud.com',
-      shopUrl: 'https://lapurasalud.com'
-    };
+    // Judge.me configuration for external site
+    window.jdgmSettings = window.jdgmSettings || {};
+    window.jdgmSettings.shopDomain = 'lapurasalud.com';
   </script>
-  <script src="https://judge.me/api/v1/widgets.js" async></script>
+  <script src="https://judge.me/api/v1/widgets.js" async defer></script>
   <script>
-    window.jdgmInterval = setInterval(function() {
-      if (typeof window.jQuery !== 'undefined' && window.jQuery.fn.jdgm) {
-        clearInterval(window.jdgmInterval);
-        window.jQuery('.jdgm-widget').each(function() {
-          window.jQuery(this).attr('data-id', 'paintpro');
-          window.jQuery(this).jdgm();
+    // Initialize judge.me widget
+    function initJudgeMe() {
+      if (typeof jQuery !== 'undefined' && jQuery.fn.jdgm) {
+        jQuery('.jdgm-widget').jdgm({
+          widget_id: 'paintpro'
         });
+      } else {
+        setTimeout(initJudgeMe, 200);
       }
-    }, 100);
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initJudgeMe);
+    } else {
+      initJudgeMe();
+    }
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
