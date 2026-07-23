@@ -771,7 +771,7 @@ ul { list-style: none; }
 
 @media (min-width: 768px) {
   .bento-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     padding: clamp(100px, 10vw, 160px) 80px;
     gap: 24px;
   }
@@ -795,7 +795,7 @@ ul { list-style: none; }
 }
 
 @media (min-width: 768px) {
-  .bento-card--large { grid-column: span 2; min-height: 500px; }
+  .bento-card--large { grid-column: span 2; grid-row: span 2; min-height: 500px; }
 }
 
 .bento-card__image {
@@ -3856,5 +3856,110 @@ textarea.contact-form__input { min-height: 140px; resize: vertical; }
   font-size: 0.875rem;
 }
 
+/* ==========================================
+   JUDGE.ME REVIEWS SECTION
+   ========================================== */
+
+.judge-me-reviews {
+  background: var(--bg-white);
+  padding: 80px 24px;
+}
+
+@media (min-width: 768px) {
+  .judge-me-reviews { padding: 120px 40px; }
+}
+
+@media (min-width: 1200px) {
+  .judge-me-reviews { padding: 160px 80px; }
+}
+
+.judge-me-reviews__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.judge-me-reviews__headline {
+  font-size: var(--text-h1);
+  font-weight: 900;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.jdgm-widget {
+  width: 100%;
+}
+
+.jdgm-rev-widg {
+  border: none !important;
+  background: transparent !important;
+}
+
+.jdgm-rev-widg__title {
+  display: none !important;
+}
+
+.jdgm-rev {
+  border-bottom: 1px solid var(--border-light) !important;
+  padding: 24px 0 !important;
+}
+
+.jdgm-rev:last-child {
+  border-bottom: none !important;
+}
+
+.jdgm-rev__author {
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+}
+
+.jdgm-rev__datetime {
+  color: var(--text-secondary) !important;
+}
+
+.jdgm-rev__body {
+  color: var(--text-primary) !important;
+  line-height: 1.6 !important;
+}
+
+.jdgm-rev__rating {
+  color: var(--accent) !important;
+}
+
+.jdgm-star {
+  color: var(--accent) !important;
+}
+
+.jdgm-paginate__first,
+.jdgm-paginate__prev,
+.jdgm-paginate__next,
+.jdgm-paginate__last {
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 8px 16px !important;
+  margin: 0 4px !important;
+}
+
+.jdgm-paginate__first:hover,
+.jdgm-paginate__prev:hover,
+.jdgm-paginate__next:hover,
+.jdgm-paginate__last:hover {
+  background: var(--bg-hover) !important;
+}
+
+.jdgm-paginate__page {
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 8px 12px !important;
+  margin: 0 4px !important;
+}
+
+.jdgm-paginate__page.jdgm-paginate__current-page {
+  background: var(--accent) !important;
+  color: var(--text-inverse) !important;
+  border-color: var(--accent) !important;
+}
 
 

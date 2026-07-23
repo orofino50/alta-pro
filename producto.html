@@ -101,7 +101,7 @@
             poster="images/hero-paintpro-poster.jpg"
             muted
             playsinline
-            preload="metadata"
+            preload="auto"
             width="1280"
             height="720"
             aria-label="PaintPro en acción: pistola pulverizadora inalámbrica pintando una superficie">
@@ -146,7 +146,7 @@
           poster="images/diseno-paintpro-poster.jpg"
           muted
           playsinline
-          preload="metadata"
+          preload="auto"
           aria-label="PaintPro en acción, mostrando su diseño compacto y ergonómico">
           <source src="images/diseno-paintpro.webm" type="video/webm">
           <source src="images/diseno-paintpro.mp4" type="video/mp4">
@@ -249,7 +249,7 @@
             muted
             loop
             playsinline
-            preload="metadata"
+            preload="auto"
             aria-label="PaintPro pintando una cerca de madera">
             <source src="images/gisam-paintpro.webm" type="video/webm">
             <source src="images/gisam-paintpro.mp4" type="video/mp4">
@@ -283,7 +283,7 @@
             muted
             loop
             playsinline
-            preload="metadata"
+            preload="auto"
             aria-label="Pintura en directo sobre superficie metálica">
             <source src="images/cultivo-paintpro.webm" type="video/webm">
             <source src="images/cultivo-paintpro.mp4" type="video/mp4">
@@ -334,7 +334,7 @@
               muted
               loop
               playsinline
-              preload="metadata"
+              preload="auto"
               aria-label="Montaje y resultado de PaintPro en una cerca">
               <source src="images/diy-paintpro.webm" type="video/webm">
               <source src="images/diy-paintpro.mp4" type="video/mp4">
@@ -353,7 +353,7 @@
               muted
               loop
               playsinline
-              preload="metadata"
+              preload="auto"
               aria-label="PaintPro cubriendo metal oxidado con pintura nueva">
               <source src="images/temu-paintpro.webm" type="video/webm">
               <source src="images/temu-paintpro.mp4" type="video/mp4">
@@ -487,6 +487,14 @@
       </div>
     </section>
 
+    <!-- JUDGE.ME REVIEWS -->
+    <section class="judge-me-reviews" id="judge-me-reviews">
+      <div class="judge-me-reviews__inner">
+        <h2 class="judge-me-reviews__headline animate-in">Opiniones de nuestros clientes</h2>
+        <div class="jdgm-widget animate-in" data-product-title="PaintPro" data-id="paintpro"></div>
+      </div>
+    </section>
+
     <!-- CROSS-LINK A PISTOLA -->
     <section class="product-feature" style="background: var(--bg-light);">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: center; padding: 80px 24px;">
@@ -549,9 +557,36 @@
 
   <script defer src="js/scripts.js"></script>
   <script>
+    window.jdgmSettings = {
+      shopDomain: 'lapurasalud.com',
+      shopUrl: 'https://lapurasalud.com'
+    };
+  </script>
+  <script src="https://judge.me/api/v1/widgets.js" async></script>
+  <script>
+    window.jdgmInterval = setInterval(function() {
+      if (typeof window.jQuery !== 'undefined' && window.jQuery.fn.jdgm) {
+        clearInterval(window.jdgmInterval);
+        window.jQuery('.jdgm-widget').each(function() {
+          window.jQuery(this).attr('data-id', 'paintpro');
+          window.jQuery(this).jdgm();
+        });
+      }
+    }, 100);
+  </script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
 
       var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // ==========================================
+      // FORCE VIDEO AUTOPLAY
+      // ==========================================
+      document.querySelectorAll('video[autoplay]').forEach(function(video) {
+        video.play().catch(function(e) {
+          console.log('Autoplay prevented:', e);
+        });
+      });
 
       // ==========================================
       // SCROLL-CONTROLLED HERO VIDEO
